@@ -5,7 +5,6 @@ const recognition = createRecognition();
 let listening = false;
 
 button.addEventListener("click", (e) => {
-  console.log("ASD");
   if (!recognition) return;
   listening ? recognition.stop() : recognition.start();
 
@@ -30,7 +29,7 @@ function createRecognition() {
   recognition.onend = () => (listening = false);
   recognition.onerror = (e) => {
     console.log("error", e);
-    text.innerHTML = "Erro, verifique se seu microfone está ativo";
+    alert("Erro, verifique se seu microfone está ativo");
 
     return null;
   };
